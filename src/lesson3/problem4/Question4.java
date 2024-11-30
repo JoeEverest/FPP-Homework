@@ -21,9 +21,9 @@ public class Question4 {
                         System.out.printf("The area of the Circle is: %.2f%n", circle.computeArea());
                     }
                     case "R" -> {
-                        System.out.print("Enter the width of the Rectangle: ");
+                        System.out.print("Enter the base of the Rectangle: ");
                         double width = scanner.nextDouble();
-                        System.out.print("Enter the length of the Rectangle: ");
+                        System.out.print("Enter the height of the Rectangle: ");
                         double length = scanner.nextDouble();
                         Rectangle rectangle = new Rectangle(length, width);
                         System.out.printf("The area of the Rectangle is: %.2f%n", rectangle.computeArea());
@@ -33,7 +33,7 @@ public class Question4 {
                         double base = scanner.nextDouble();
                         System.out.print("Enter the height of the Triangle: ");
                         double height = scanner.nextDouble();
-                        Triangle triangle = new Triangle(base, height);
+                        Triangle triangle = new Triangle(height, base);
                         System.out.printf("The area of the Triangle is: %.2f%n", triangle.computeArea());
                     }
                     default -> System.out.println("Invalid choice. Please enter C, R, or T.");
@@ -45,7 +45,7 @@ public class Question4 {
             }
 
             scanner.close();
-            System.out.println("Thank you! Have a nice day");
+            System.out.println("Thank you! Have a nice day.");
         }
 
 }

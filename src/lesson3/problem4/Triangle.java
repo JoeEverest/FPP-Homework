@@ -1,7 +1,7 @@
 package lesson3.problem4;
 
-public record Triangle(double length, double width) {
+public record Triangle(double height, double base) {
     public double computeArea(){
-        return 0.5 * length * width;
+        return 0.5 * height * base;
     }
 }
