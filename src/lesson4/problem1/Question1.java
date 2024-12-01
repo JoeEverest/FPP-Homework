@@ -5,7 +5,7 @@ public class Question1 {
         System.out.println("2 to the power of 10 is = "+power(2,10));
     }
 
-    static double power(double x, int n){
+    public static double power(double x, int n){
         if(x == 0){
             return 0;
         }
