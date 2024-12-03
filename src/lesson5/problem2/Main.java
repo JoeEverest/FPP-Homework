@@ -23,9 +23,8 @@ public class Main {
         System.out.print("Do you want to see the sum of all salaries? (Y or N): ");
         Scanner input = new Scanner(System.in);
         String res = input.next();
-        System.out.println();
 
-        if(res.equals("Y")){
+        if(res.equalsIgnoreCase("Y")){
             getTotalSalaries(employees);
         }else{
             System.out.println("Good bye");
