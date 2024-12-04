@@ -29,7 +29,7 @@ public class Main {
         }else{
             System.out.println("Good bye");
         }
-
+        input.close();
     }
 
     public static void getTotalSalaries(DeptEmployee[] employees){

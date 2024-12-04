@@ -1,8 +1,5 @@
 package lesson5.problem2;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-
 public class Professor extends DeptEmployee{
     private int numberOfPublications;
 
