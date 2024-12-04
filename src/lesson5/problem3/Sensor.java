@@ -6,5 +6,4 @@ public interface Sensor {
     String getLocation();
     String getLastUpdated();
     String performAction();
-    String toString();
 }
