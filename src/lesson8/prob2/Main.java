@@ -38,7 +38,7 @@ public class Main {
 
 		data.addAll(staff);
 		data.addAll(teachers);
-		
+
 		return data;
 	}
 
