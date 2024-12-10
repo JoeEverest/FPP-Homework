@@ -66,11 +66,13 @@ public class MyPersonList {
 
 		return true;
 	}
+	
   	// 5. Resizing the list
 	private void resize() {
 		PersonArray = Arrays.copyOf(PersonArray, PersonArray.length*2);
 	}
-   // To display all the persons list
+
+
 	public String toString() {
 		StringBuilder sb = new StringBuilder("[\"");
 		for (int i = 0; i < size - 1; ++i) {
@@ -79,7 +81,8 @@ public class MyPersonList {
 		sb.append(PersonArray[size - 1]).append("\"]");
 		return sb.toString();
 	}
-   // Return the size
+
+
 	public int size() {
 		return size;
 	}
