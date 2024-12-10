@@ -66,7 +66,7 @@ public class MyPersonList {
 
 		return true;
 	}
-	
+
   	// 5. Resizing the list
 	private void resize() {
 		PersonArray = Arrays.copyOf(PersonArray, PersonArray.length*2);
