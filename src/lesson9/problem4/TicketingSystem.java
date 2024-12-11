@@ -32,6 +32,10 @@ public class TicketingSystem {
         return ticketQueue.isEmpty();
     }
 
+    public int size() {
+        return ticketQueue.size();
+    }
+
     @Override
     public String toString(){
         if(isEmpty()) return "No tickets available";

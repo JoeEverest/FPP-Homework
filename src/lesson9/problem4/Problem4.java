@@ -8,6 +8,7 @@ public class Problem4 {
         system.addTicket("Payment not processed");
         system.addTicket("Bug in the mobile view");
 
+        System.out.println("Number of open tickets: "+system.size());
         System.out.println("All tickets:\n"+system);
         System.out.println();
 
