@@ -25,7 +25,7 @@ public class Main {
         System.out.println("At index 2: "+data.get(2));
 
         // f.
-        data.set(3, new Marketing("Denzel Washington","Sofa set", 1387.99 ));
+        data.set(3, new Marketing("Denzel Washington","Sofa set", 1387.99));
         System.out.println("\nReplaced:\n"+data.toString());
 
         // h.

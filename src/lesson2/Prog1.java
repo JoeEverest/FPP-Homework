@@ -7,9 +7,9 @@ public class Prog1 {
         Random rand = new Random();
 
         int x = rand.nextInt(1, 9+1); // bound isn't inclusive so +1
-        double piePowerX = Math.pow(Math.PI, x);
+        double piPowerX = Math.pow(Math.PI, x);
 
-        System.out.printf("PI to the power of X %.2f", piePowerX);
+        System.out.printf("PI to the power of X %.2f", piPowerX);
 
         System.out.println();
 

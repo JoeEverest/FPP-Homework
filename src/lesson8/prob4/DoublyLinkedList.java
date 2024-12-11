@@ -1,4 +1,4 @@
-package prob4;
+package lesson8.prob4;
 
 public class DoublyLinkedList {
 	
@@ -63,7 +63,6 @@ public class DoublyLinkedList {
 
 			header.next = currentFirst.next;
 			currentFirst.next.previous = header;
-
 			currentFirst.value = null;
 
 			return true;

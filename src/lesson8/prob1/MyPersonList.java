@@ -27,7 +27,7 @@ public class MyPersonList {
 
 	// 2. get person information by passing index
 	public Person get(int i) {
-		if(i > PersonArray.length || i > size) return null;
+		if (i < 0 || i >= size) return null; //*
 		return PersonArray[i];
 	}
 
@@ -45,23 +45,25 @@ public class MyPersonList {
  
   	// 4. Remove the person object by passing its lastname
 	public boolean remove(String lastName) {
-		if(lastName == null || lastName.isEmpty()) return false;
+		if (lastName == null || lastName.isEmpty()) return false;
 
 		int findIndex = -1;
-		for (int i = 0; i< size; i++){
-			if(PersonArray[i].getLast().equals(lastName)){
+		for (int i = 0; i < size; i++) {
+			if (PersonArray[i].getLast().equals(lastName)) {
 				findIndex = i;
 				break;
 			}
 		}
 
-		if(findIndex == -1) return false;
+		if (findIndex == -1) return false;
 
-		for (int i = findIndex+1; i <= size; i++) {
-			PersonArray[i-1] = PersonArray[i];
+		// Shift elements to the left
+		for (int i = findIndex; i < size - 1; i++) {  //*
+			PersonArray[i] = PersonArray[i + 1];
 		}
 
-		PersonArray[size] = null;
+		// Nullify the last element and decrement size
+		PersonArray[size - 1] = null;  //*
 		size--;
 
 		return true;
@@ -74,6 +76,7 @@ public class MyPersonList {
 
 
 	public String toString() {
+		if (size == 0) return "[]"; //* Handle empty list
 		StringBuilder sb = new StringBuilder("[\"");
 		for (int i = 0; i < size - 1; ++i) {
 			sb.append(PersonArray[i]).append("\", \"");
