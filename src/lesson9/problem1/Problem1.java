@@ -1,7 +1,5 @@
 package lesson9.problem1;
 
-import org.junit.Test;
-
 import java.util.Random;
 
 public class Problem1 {
