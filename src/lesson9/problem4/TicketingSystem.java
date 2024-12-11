@@ -12,7 +12,7 @@ public class TicketingSystem {
         nextId = 1;
     }
 
-    public void createTicket(String description){
+    public void addTicket(String description){
         if(description == null || description.isEmpty()) return;
         Ticket t = new Ticket(nextId++, description);
         ticketQueue.add(t);

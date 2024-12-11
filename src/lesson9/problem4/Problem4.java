@@ -4,9 +4,9 @@ public class Problem4 {
     public static void main(String[] args) {
         TicketingSystem system = new TicketingSystem();
 
-        system.createTicket("Issue with login");
-        system.createTicket("Payment not processed");
-        system.createTicket("Bug in the mobile view");
+        system.addTicket("Issue with login");
+        system.addTicket("Payment not processed");
+        system.addTicket("Bug in the mobile view");
 
         System.out.println("All tickets:\n"+system);
         System.out.println();
