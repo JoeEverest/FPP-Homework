@@ -29,13 +29,16 @@ public class ArrayQueueImpl {
     public int dequeue() {
         int out = peek();
         front++;
-
+        if(front==rear){ //* reset positions
+            front=-1;
+            rear = 0;
+        }
         return out;
     }
 
     public boolean isEmpty(){
         return front == -1 || size() == 0;
-    }
+    } //* size()==0 maybe redundant
 
     public int size(){
         if(front == -1) return 0;
@@ -44,6 +47,13 @@ public class ArrayQueueImpl {
 
     private void resize(){
         arr = Arrays.copyOf(arr, arr.length*2);
+
+          //* Below code maybe memory efficient, more control over what is copied
+//        int[] new_arr = new int[arr.length * 2];
+//        System.arraycopy(arr, front, new_arr, 0, size());
+//        front = 0;
+//        rear = size();
+//        arr=new_arr;
     }
 
     @Override
