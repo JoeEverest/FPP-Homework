@@ -10,62 +10,53 @@ public class LinkedListStack {
         }
     }
 
-    Node front, rear;
+    Node top;
     int count;
 
     public void push(Integer x) {
-        Node new_node = new Node(x);  // lets call it new_node, data little confusing :)
-
-        if (front == null) {
-            front = new_node;
-            rear = new_node;
-        }
-        else{
-            rear.next = new_node;
-            rear = new_node;
-        }
+        Node newNode = new Node(x);
+        newNode.next = top; 
+        top = newNode;
         count++;
     }
 
     public Integer peek() {
-        if(isEmpty()){
+        if (isEmpty()) {
             return null;
         }
-        return front.data;
+        return top.data;
     }
 
     public Integer pop() {
-        if(isEmpty()){
+        if (isEmpty()) {
             return null;
         }
-        Integer ret = peek(); // return type Integer in peek
-        front = front.next;
+        int ret = top.data;
+        top = top.next;
         count--;
         return ret;
     }
-    public boolean isEmpty(){ // true if stack is empty
-        return front == null;
+
+    public boolean isEmpty() {
+        return top == null;
     }
 
-    public int size(){ // returns number of items in the stack
+    public int size() {
         return count;
     }
 
     @Override
     public String toString() {
-       if(front == null) return "Empty";
-       StringBuffer sb = new StringBuffer("[");
-
-       Node current = front;
-       while (current != null){
-           sb.append(current.data);
-           if (current.next != null) {
-               sb.append(", ");  // comma only if there is another node
-           }
-           current = current.next;
-       }
-       sb.append("]");
-
-       return sb.toString();
+        StringBuilder sb = new StringBuilder("[");
+        Node current = top;
+        while (current != null) {
+            sb.append(current.data);
+            if (current.next != null) {
+                sb.append(", ");
+            }
+            current = current.next;
+        }
+        sb.append("]");
+        return sb.toString();
     }
 }
