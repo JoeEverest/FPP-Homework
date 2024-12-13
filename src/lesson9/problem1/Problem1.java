@@ -24,5 +24,14 @@ public class Problem1 {
         }
 
         System.out.println("After processing, the size is "+q.size());
+        System.out.println(q);
+
+        System.out.println("Add 10 more");
+        for (int i = 0; i < 10; i++) {
+            q.enqueue(new Random().nextInt(10, 100));
+        }
+
+        System.out.println("New size: "+q.size());
+        System.out.println(q);
     }
 }
