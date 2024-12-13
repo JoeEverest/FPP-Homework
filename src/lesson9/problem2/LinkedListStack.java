@@ -14,29 +14,16 @@ public class LinkedListStack {
     int count;
 
     public void push(Integer x) {
-        Node data = new Node(x);
+        Node new_node = new Node(x);  // lets call it new_node, data little confusing :)
 
         if (front == null) {
-            front = data;
-            rear = data;
-            front.next = null;
-            count++;
-            return;
+            front = new_node;
+            rear = new_node;
         }
-        if (front == rear) {
-            front.next = data;
-            rear = data;
-            rear.next = null;
-            count++;
-            return;
+        else{
+            rear.next = new_node;
+            rear = new_node;
         }
-        //old rear
-        rear.next = data;
-        // new rear is current data
-        rear = data;
-        // set next for new rear
-        rear.next = null;
-
         count++;
     }
 
@@ -51,7 +38,7 @@ public class LinkedListStack {
         if(isEmpty()){
             return null;
         }
-        int ret = peek();
+        Integer ret = peek(); // return type Integer in peek
         front = front.next;
         count--;
         return ret;
@@ -71,10 +58,13 @@ public class LinkedListStack {
 
        Node current = front;
        while (current != null){
-           sb.append(current.data).append(", ");
+           sb.append(current.data);
+           if (current.next != null) {
+               sb.append(", ");  // comma only if there is another node
+           }
            current = current.next;
        }
-       sb.append("\b\b]");
+       sb.append("]");
 
        return sb.toString();
     }
